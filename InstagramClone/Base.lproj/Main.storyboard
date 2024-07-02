@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VxS-8u-l0u">
-                                <rect key="frame" x="53" y="148" width="289" height="34"/>
+                                <rect key="frame" x="53" y="89" width="289" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="w4f-BX-Psd"/>
                                 </constraints>
@@ -34,12 +34,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXv-fV-IZe">
-                                <rect key="frame" x="51" y="198" width="291" height="34"/>
+                                <rect key="frame" x="51" y="139" width="291" height="127"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLt-bL-ejd">
-                                <rect key="frame" x="53" y="268" width="114" height="50"/>
+                                <rect key="frame" x="53" y="302" width="114" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="olN-oO-gu6"/>
                                 </constraints>
@@ -92,7 +92,7 @@
         <!--Upload-->
         <scene sceneID="4Ey-LX-yKz">
             <objects>
-                <viewController id="xch-XB-OVh" sceneMemberID="viewController">
+                <viewController id="xch-XB-OVh" customClass="UploadViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FA2-Hp-sAw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,10 +105,40 @@
             </objects>
             <point key="canvasLocation" x="1946" y="361"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="yoD-RK-X4V">
+            <objects>
+                <viewController id="qrI-Bm-oXH" customClass="SettingsViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tbk-vJ-nWH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-lG-lJu">
+                                <rect key="frame" x="156" y="337" width="82" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="qrI-Bm-oXH" eventType="touchUpInside" id="35S-Ep-h7H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WQq-rY-W1h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="5VR-o8-F7L"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="aPs-zd-PxJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVb-wn-ead" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946" y="1046"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="LQO-Ju-xKO">
             <objects>
-                <viewController id="QVB-pO-DlW" sceneMemberID="viewController">
+                <viewController id="QVB-pO-DlW" customClass="FeedViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RW3-d7-X3X">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,6 +164,7 @@
                     <connections>
                         <segue destination="QVB-pO-DlW" kind="relationship" relationship="viewControllers" id="bxq-9g-xiW"/>
                         <segue destination="xch-XB-OVh" kind="relationship" relationship="viewControllers" id="91I-sq-Ppr"/>
+                        <segue destination="qrI-Bm-oXH" kind="relationship" relationship="viewControllers" id="iQH-FJ-hhv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWV-kr-iVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

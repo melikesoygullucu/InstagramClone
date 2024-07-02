@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D5DEBC02C3486E400CC9BF6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5DEBBF2C3486E400CC9BF6 /* FeedViewController.swift */; };
+		4D5DEBC22C3486EF00CC9BF6 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5DEBC12C3486EF00CC9BF6 /* UploadViewController.swift */; };
+		4D5DEBC42C3486F800CC9BF6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5DEBC32C3486F800CC9BF6 /* SettingsViewController.swift */; };
 		4DA105B22C33EED6000BB6A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DA105B12C33EED6000BB6A3 /* GoogleService-Info.plist */; };
 		4DF566882C32EFC10066E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF566872C32EFC10066E719 /* AppDelegate.swift */; };
 		4DF5668A2C32EFC10066E719 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF566892C32EFC10066E719 /* SceneDelegate.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D5DEBBF2C3486E400CC9BF6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4D5DEBC12C3486EF00CC9BF6 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		4D5DEBC32C3486F800CC9BF6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4DA105B12C33EED6000BB6A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4DF566842C32EFC10066E719 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF566872C32EFC10066E719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,9 @@
 				4DF566872C32EFC10066E719 /* AppDelegate.swift */,
 				4DF566892C32EFC10066E719 /* SceneDelegate.swift */,
 				4DF5668B2C32EFC10066E719 /* ViewController.swift */,
+				4D5DEBBF2C3486E400CC9BF6 /* FeedViewController.swift */,
+				4D5DEBC12C3486EF00CC9BF6 /* UploadViewController.swift */,
+				4D5DEBC32C3486F800CC9BF6 /* SettingsViewController.swift */,
 				4DF5668D2C32EFC10066E719 /* Main.storyboard */,
 				4DF566902C32EFC20066E719 /* Assets.xcassets */,
 				4DF566922C32EFC20066E719 /* LaunchScreen.storyboard */,
@@ -211,8 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF5668C2C32EFC10066E719 /* ViewController.swift in Sources */,
+				4D5DEBC22C3486EF00CC9BF6 /* UploadViewController.swift in Sources */,
 				4DF566882C32EFC10066E719 /* AppDelegate.swift in Sources */,
+				4D5DEBC02C3486E400CC9BF6 /* FeedViewController.swift in Sources */,
 				4DF5668A2C32EFC10066E719 /* SceneDelegate.swift in Sources */,
+				4D5DEBC42C3486F800CC9BF6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
