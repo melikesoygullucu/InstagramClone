@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
+import FirebaseAuth
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -46,21 +48,40 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
             
             let uuid = UUID().uuidString
-            let imageReference = storageReference.child("\(uuid).jpg")
+            let imageReference = mediaFolder.child("\(uuid).jpg")
             imageReference.putData(data, metadata: nil) { (metadata, error) in
                 if error != nil {
-                    print(error?.localizedDescription as Any)
+                    self.alertDialog(title: "Error", message: error?.localizedDescription ?? "Please try again later!")
                 } else {
                     imageReference.downloadURL { url, error in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-                            print(imageUrl)
+                            
+                            // DATABASE
+                            
+                            let firestoreDatabase = Firestore.firestore()
+                            var firestoreReference : DocumentReference?
+                            let firestorePost = ["imageURL" : imageUrl, "owner" : Auth.auth().currentUser?.email!, "postComment" : self.captionTextField.text!, "date" : "date", "likes" : 0]
+                            
+                            firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { error in
+                                if error != nil {
+                                    self.alertDialog(title: "Error", message: error?.localizedDescription ?? "Something went wrong, please try again.")
+                                }
+                            })
+                            
                         }
                     }
                 }
             }
         }
         
+    }
+    
+    func alertDialog(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
     }
     
 
