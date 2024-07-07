@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import SDWebImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -83,7 +84,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userEmailLabel.text = userEmailArray[indexPath.row]
         cell.likeLabel.text = String(likeArray[indexPath.row])
         cell.captionLabel.text = commentArray[indexPath.row]
-        cell.postImageView.image = UIImage(named: "select.png")
+        cell.postImageView.sd_setImage(with: URL(string: self.imageArray[indexPath.row]))
         return cell
     }
     

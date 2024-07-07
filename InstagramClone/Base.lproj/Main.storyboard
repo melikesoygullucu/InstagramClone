@@ -189,6 +189,10 @@
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V2w-qq-BfD">
                                                     <rect key="frame" x="27" y="48" width="339" height="235"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="235" id="6h6-dK-jHu"/>
+                                                        <constraint firstAttribute="width" constant="339" id="LTQ-DM-5oH"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05f-Ye-V12">
                                                     <rect key="frame" x="27" y="291" width="339" height="30"/>
