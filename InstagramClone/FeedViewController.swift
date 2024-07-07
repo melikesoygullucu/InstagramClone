@@ -16,6 +16,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var likeArray = [Int]()
     var postArray = [String]()
     var imageArray = [String]()
+    var documentIDArray = [String]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,7 +34,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getDataFromFirestore() {
         let firestoreDatabase = Firestore.firestore()
         
-        firestoreDatabase.collection("Posts").addSnapshotListener { snaphot, error in
+        firestoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { snaphot, error in
             if error != nil {
                 print(error?.localizedDescription)
             } else {
@@ -43,11 +44,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.commentArray.removeAll(keepingCapacity: false)
                     self.likeArray.removeAll(keepingCapacity: false)
                     self.imageArray.removeAll(keepingCapacity: false)
+                    self.documentIDArray.removeAll(keepingCapacity: false)
 
                     
                     for document in snaphot!.documents {
                         let documentID = document.documentID
-                        print(documentID)
+                        self.documentIDArray.append(documentID)
+                        
                         
                         if let owner = document.get("owner") as? String {
                             self.userEmailArray.append(owner)
@@ -85,6 +88,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.likeLabel.text = String(likeArray[indexPath.row])
         cell.captionLabel.text = commentArray[indexPath.row]
         cell.postImageView.sd_setImage(with: URL(string: self.imageArray[indexPath.row]))
+        cell.documentIDLabel.text = documentIDArray[indexPath.row]
         return cell
     }
     
